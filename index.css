@@ -1,23 +1,49 @@
 body {
     color: cornsilk;
     background-color: #141154;
-    font-family: 'Quintessential', cursive;
-    margin: 10px;
+    font-family: 'Ubuntu Mono', monospace;
+    padding: 5px 20px 10px 20px;
     width: 300px;
+    user-select: none;
+}
+
+h2 {
+    font-family: 'Quintessential', cursive;
 }
 
 span {
     font-size: 15px;
 }
 
-#year,#month,#day {
-    border-radius: 5px;
+#progress > div {
+    font-size: 15px;
+    margin: 10px auto 10px auto;
+}
+
+.progress-bar-container {
+    margin-left: 0;
+    margin-right: 0;
+    border: darkblue solid 3px;
+    border-radius: 10px;
     background-color: darkblue;
+    -webkit-box-shadow: 2px 2px 16px 0px rgba(0,0,139,0.9); 
+    box-shadow: 2px 2px 16px 0px rgba(0,0,139,0.9);
+}
+
+#current-time {
+    font-family: 'Ubuntu Mono', monospace;
+    margin: 10px auto 10px auto;
+    font-size: 16px;
 }
 
 .progress-bar {
-    padding-left: 10px;
-    min-height: 10px;
-    border-radius: 5px;
-    background-color: crimson;
+    font-family: 'Ubuntu Mono', monospace;
+    padding: 1px 0 1px 10px;
+    height: 19px;
+    border-radius: 10px;
+    background-color: #6341bf;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
 }
