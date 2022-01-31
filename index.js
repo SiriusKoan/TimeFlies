@@ -1,8 +1,5 @@
 const day_of_week_names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-var year_progress_bar = document.getElementById("year").children[0];
-var month_progress_bar = document.getElementById("month").children[0];
-var day_progress_bar = document.getElementById("day").children[0];
 
 function month_days(month, year) {
     if (month == 2) {
@@ -52,6 +49,9 @@ function generate_ticks(id, count) {
 
 function render_progress_bar() {
     var now = new Date();
+    var year_progress_bar = document.getElementById("year").children[0];
+    var month_progress_bar = document.getElementById("month").children[0];
+    var day_progress_bar = document.getElementById("day").children[0];
     // year
     var seconds_of_passed_months = 0;
     for (var i = 1; i < now.getMonth(); i++) {
