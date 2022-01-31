@@ -1,0 +1,23 @@
+body {
+    color: cornsilk;
+    background-color: #141154;
+    font-family: 'Quintessential', cursive;
+    margin: 10px;
+    width: 300px;
+}
+
+span {
+    font-size: 15px;
+}
+
+#year,#month,#day {
+    border-radius: 5px;
+    background-color: darkblue;
+}
+
+.progress-bar {
+    padding-left: 10px;
+    min-height: 10px;
+    border-radius: 5px;
+    background-color: crimson;
+}
