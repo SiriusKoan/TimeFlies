@@ -41,6 +41,7 @@ span {
 }
 
 .progress-bar-container {
+    position: relative;
     margin-left: 0;
     margin-right: 0;
     border: #33364d solid 4px;
@@ -68,4 +69,24 @@ span {
     -webkit-box-sizing: border-box;
     transition-duration: 0.1s;
     transition-timing-function: linear;
+    -webkit-transition-duration: 0.1s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-duration: 0.1s;
+    -moz-transition-timing-function: linear;
+    z-index: 100;
+}
+
+.tick {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left: 2px solid #010840;
+    border-right: 1px solid transparent;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
 }

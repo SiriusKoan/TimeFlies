@@ -38,7 +38,16 @@ function render_current_time() {
     var year = now.getFullYear();
     var day_of_week = now.getDay();
     document.getElementById("current-time").innerText = `${year}-${month}-${day} ${hours}:${minutes}:${seconds} ${day_of_week_names[day_of_week]}`;
-    setTimeout(render_current_time, 100);
+    setTimeout(render_current_time, 200);
+}
+
+function generate_ticks(id, count) {
+    var bar = document.getElementById(id);
+    var ticks_html = "";
+    for (var i = 1; i < count; i++) {
+        ticks_html += `<span class="tick" style="left: ${i * 100 / count}%"></span>`;
+    }
+    bar.innerHTML += ticks_html;
 }
 
 function render_progress_bar() {
@@ -63,8 +72,11 @@ function render_progress_bar() {
     var day_percentage = (now.getSeconds() + now.getMinutes() * 60 + now.getHours() * 3600) * 100 / 86400;
     day_progress_bar.style.width = day_percentage.toFixed(2) + "%";
     day_progress_bar.innerText = day_percentage.toFixed(2) + "%";
-    setInterval(render_progress_bar, 1000);
+    setTimeout(render_progress_bar, 1000);
 }
 
 render_progress_bar();
 render_current_time();
+generate_ticks("year", 4);
+generate_ticks("month", 4);
+generate_ticks("day", 2);
