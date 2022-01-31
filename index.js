@@ -1,11 +1,10 @@
 const day_of_week_names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
+const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 var year_progress_bar = document.getElementById("year").children[0];
 var month_progress_bar = document.getElementById("month").children[0];
 var day_progress_bar = document.getElementById("day").children[0];
 
 function month_days(month, year) {
-    var days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     if (month == 2) {
         if (year % 4 == 0) {
             if (year % 100 == 0) {
