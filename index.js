@@ -51,6 +51,7 @@ function render_progress_bar() {
     let now = new Date();
     let year_progress_bar = document.getElementById("year").children[0];
     let month_progress_bar = document.getElementById("month").children[0];
+    let week_progress_bar = document.getElementById("week").children[0];
     let day_progress_bar = document.getElementById("day").children[0];
     // year
     let seconds_of_passed_months = 0;
@@ -68,6 +69,12 @@ function render_progress_bar() {
     let month_percentage = seconds_of_passed_days * 100 / (month_days(now.getMonth() + 1, now.getFullYear()) * 86400);
     month_progress_bar.style.width = month_percentage.toFixed(2) + "%";
     month_progress_bar.innerText = month_percentage.toFixed(2) + "%";
+    // week
+    let seconds_of_passed_days_of_week = 86400 * (now.getDay());
+    seconds_of_passed_days_of_week += now.getSeconds() + now.getMinutes() * 60 + now.getHours() * 3600;
+    let week_percentage = seconds_of_passed_days_of_week * 100 / (86400 * 7);
+    week_progress_bar.style.width = week_percentage.toFixed(2) + "%";
+    week_progress_bar.innerText = week_percentage.toFixed(2) + "%";
     // day
     let day_percentage = (now.getSeconds() + now.getMinutes() * 60 + now.getHours() * 3600) * 100 / 86400;
     day_progress_bar.style.width = day_percentage.toFixed(2) + "%";
@@ -79,4 +86,5 @@ render_progress_bar();
 render_current_time();
 generate_ticks("year", 4);
 generate_ticks("month", 4);
+generate_ticks("week", 2);
 generate_ticks("day", 2);
